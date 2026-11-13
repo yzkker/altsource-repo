@@ -1,0 +1,72 @@
+{
+  "name": "My AltSource",
+  "icon": "https://avatars.githubusercontent.com/u/354314991?v=4",
+  "website": "https://github.com",
+  "apps": [
+    {
+      "name": "GestaltX",
+      "bundleIdentifier": "com.huami.gestultx",
+      "version": "1.0.7",
+      "versionDate": "2026-11-12T17:14:29Z",
+      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
+      "size": 3563948,
+      "developerName": "huamidev",
+      "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again.\r\n\r\n",
+      "iconURL": "https://avatars.githubusercontent.com/u/354314991?v=4",
+      "screenshotURLs": [],
+      "minOSVersion": "15.0"
+    },
+    {
+      "name": "3106",
+      "bundleIdentifier": "com.qingtang.3106",
+      "version": "3.2.3",
+      "versionDate": "2026-11-12T13:27:16Z",
+      "downloadURL": "https://github.com/QuinnTang74/3106/releases/download/v3.2.3/3106-3.2.3-unsigned.ipa",
+      "size": 5111083,
+      "developerName": "QuinnTang74",
+      "localizedDescription": "# 3.2.3 正式版 · Stable Release Notes\n\n发布日期：2026-11-12 ｜ build 21\n\n## 中文\n\n### 修复\n\n- **`.tendies` 导入在真机上全部失败 `noDescriptors`**（issue #2）：路径包含检查此前依赖软链解析（`resolvingSymlinksInPath()`），真机沙盒内该调用可能提前返回，`/var` 与 `/private/var` 两种拼写无法归一，导致 descriptors 目录被整棵跳过、导入被拒。现在检查接受两侧任意 raw/resolved 拼写组合，不再依赖软链解析；导入入口统一解压根的路径形态；诊断日志同时打印解析前后的两侧路径。\n\n其余功能与 3.2.2 完全一致，无其他改动。\n\n## English\n\n### Fixed\n\n- **Every `.tendies` import failed with `noDescriptors` on device** (issue #2): the path-containment check depended on symlink resolution (`resolvingSymlinksInPath()`), which can stop early inside the device sandbox — `/var` and `/private/var` then failed to canonicalize to the same tree, the `descriptors` directory was skipped wholesale, and the import was rejected. Containment now accepts any combination of raw and resol",
+      "iconURL": "https://avatars.githubusercontent.com/u/96588526?v=4",
+      "screenshotURLs": [],
+      "minOSVersion": "15.0"
+    },
+    {
+      "name": "WQManager",
+      "bundleIdentifier": "mumu.pduola.WQManager",
+      "version": "0.3.1",
+      "versionDate": "2026-11-12T12:58:23Z",
+      "downloadURL": "https://github.com/hseons/WQManager/releases/download/v0.3.1/WQManager-0.3.1-unsigned.ipa",
+      "size": 705110,
+      "developerName": "hseons",
+      "localizedDescription": "- 新增存储占用面板与清理\n- 修复分享导入残留占用空间\n- 恢复后只保留最新一份安全备份",
+      "iconURL": "https://avatars.githubusercontent.com/u/355256034?v=4",
+      "screenshotURLs": [],
+      "minOSVersion": "15.0"
+    },
+    {
+      "name": "iPadn",
+      "bundleIdentifier": "app.local.iPadn",
+      "version": "2.0.0",
+      "versionDate": "2026-11-12T10:41:39Z",
+      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.0.0/iPadn-2.0.0-unsigned.ipa",
+      "size": 48201588,
+      "developerName": "mengangs",
+      "localizedDescription": "## iPadn 2.0.0\n\niPadn 2.0 是一次大更新：新增发现页、用户评论、翻译、应用锁、本机应用、Wi‑Fi 传输、灵动岛下载进度、小组件和快捷指令，原生安装可以阻止 App Store 更新，并开始支持 iOS / iPadOS 16。安装包未签名，请用自己的工具签名后安装。\n\n**两个安装包**\n\n- `iPadn-2.0.0-unsigned.ipa`：标准版，包含实时活动（灵动岛、锁屏）和小组件，签名时需要 2 个 App ID。\n- `iPadn-2.0.0-lite-unsigned.ipa`：精简版，不含扩展，只需 1 个 App ID，适合 App ID 数量有限的签名方式。其他功能相同。\n- SideStore、AltStore、Feather 等签名工具可以添加源 `https://raw.githubusercontent.com/mengangs/ipadn/main/altstore-source.json`，在工具里直接安装和更新。\n\n**发现与应用详情**\n\n- 搜索页新增「发现」：免费榜、付费榜、畅销榜，可切换地区并按分类筛选。\n- 详情页新增「评论」，可查看各地区最近的用户评论并按星级筛选。\n- 简介和更新说明不是你的语言时，可以用系统翻译替换为译文（iOS 17.4 及更新版本）。\n- 版本历史默认显示最近 5 个版本。\n\n**下载与安装**\n\n- 锁屏和灵动岛显示下载进度（可在设置中关闭）。\n- 新增「仅使用 Wi‑Fi 下载」和「下载完成后自动安装」。\n- 下载页可以「全部更新」，编辑模式改为紧凑列表并支持全选。\n- 任务详情新增「安装包信息」：权限、扩展、语言、URL Scheme、后台模式等。\n- 原生安装新增「阻止 App Store 更新」：App Store 会把应用视为最新版本，不再提示或自动更新；关闭后再安",
+      "iconURL": "https://avatars.githubusercontent.com/u/138592982?v=4",
+      "screenshotURLs": [],
+      "minOSVersion": "15.0"
+    },
+    {
+      "name": "HGhubX",
+      "bundleIdentifier": "com.hghub.huangguo",
+      "version": "1.2.19",
+      "versionDate": "2026-11-11T07:47:10Z",
+      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v1.2.19/HGhub_1.2.19_ios.ipa",
+      "size": 3521136,
+      "developerName": "zxsos",
+      "localizedDescription": "## What's Changed\n* ci: 添加前端 PR 检查流水线 by @zxsos in https://github.com/zxsos/HGhub/pull/49\n* fix(clipboard): 分享与链接复制兜底改用原生剪贴板 by @zxsos in https://github.com/zxsos/HGhub/pull/42\n* fix(player): 切换短剧时先清空相关推荐 by @zxsos in https://github.com/zxsos/HGhub/pull/46\n* fix(search): 新关键词不再被进行中的请求吞掉 by @zxsos in https://github.com/zxsos/HGhub/pull/43\n* fix(home): 首页翻页失败后退避，避免反复弹错误提示 by @zxsos in https://github.com/zxsos/HGhub/pull/44\n* fix(line): 切换线路后重拉加载失败的首页与分类数据 by @zxsos in https://github.com/zxsos/HGhub/pull/45\n* fix(search): 就地搜索框对齐全局搜索，频道页搜索按钮归位 by @zxsos in https://github.com/zxsos/HGhub/pull/47\n* fix(category): 频道页翻页按页排序，避免加载更多时列表重排 by @zxsos in https://github.com/zxsos/HGhub/pull/48\n\n\n**Full Changelog**: https://github.com/zxsos/HGhub/compare/v1.2.18...v1.2.19",
+      "iconURL": "https://avatars.githubusercontent.com/u/88264662?v=4",
+      "screenshotURLs": [],
+      "minOSVersion": "15.0"
+    }
+  ]
+}
