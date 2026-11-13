@@ -1,0 +1,112 @@
+name: Build AltSource JSON
+run-name: Generate altsource.json from releases
+
+on:
+  workflow_dispatch: # 手动触发
+  schedule:
+    - cron: '0 */6 * * *' # 每6小时自动抓取一次
+
+jobs:
+  generate-source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run script to fetch releases & build altsource.json
+        run: |
+          python3 << 'PYSCRIPT'
+          import requests
+          import json
+          import os
+
+          # ========== 真实仓库 + 从 IPA Info.plist 提取的真实 BundleID ==========
+          repos = [
+              {"repo": "huamidev/GestaltX",   "name": "GestaltX",  "bundleID": "com.huami.gestultx",     "icon": "https://avatars.githubusercontent.com/u/354314991?v=4", "ipa_suffix": ".ipa"},
+              {"repo": "QuinnTang74/3106",    "name": "3106",      "bundleID": "com.qingtang.3106",      "icon": "https://avatars.githubusercontent.com/u/96588526?v=4",  "ipa_suffix": ".ipa"},
+              {"repo": "hseons/WqManager",    "name": "WQManager", "bundleID": "mumu.pduola.WQManager",  "icon": "https://avatars.githubusercontent.com/u/355256034?v=4", "ipa_suffix": ".ipa"},
+              {"repo": "mengangs/ipadn",      "name": "iPadn",     "bundleID": "app.local.iPadn",        "icon": "https://avatars.githubusercontent.com/u/138592982?v=4", "ipa_suffix": "-unsigned.ipa", "ipa_exclude": "lite"},
+              {"repo": "zxsos/HGhub",         "name": "HGhubX",    "bundleID": "com.hghub.huangguo",     "icon": "https://avatars.githubusercontent.com/u/88264662?v=4",  "ipa_suffix": "_ios.ipa"},
+          ]
+          # ========================================================
+
+          GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+          headers = {}
+          if GITHUB_TOKEN:
+              headers["Authorization"] = f"token {GITHUB_TOKEN}"
+
+          source_base = {
+              "name": "My AltSource",
+              "icon": "https://avatars.githubusercontent.com/u/354314991?v=4",
+              "website": "https://github.com",
+              "apps": []
+          }
+
+          for item in repos:
+              repo_full = item["repo"]
+              print(f"Fetching latest release for {repo_full}")
+              url = f"https://api.github.com/repos/{repo_full}/releases/latest"
+              resp = requests.get(url, headers=headers)
+              if resp.status_code != 200:
+                  print(f"WARN: {repo_full} fetch failed, code={resp.status_code}")
+                  continue
+              rel = resp.json()
+
+              # 按 ipa_suffix 过滤，支持排除 lite / 指定 ios 专用包
+              ipa_asset = None
+              for asset in rel["assets"]:
+                  n = asset["name"].lower()
+                  if not n.endswith(item["ipa_suffix"]):
+                      continue
+                  if item.get("ipa_exclude") and item["ipa_exclude"] in n:
+                      continue
+                  ipa_asset = asset
+                  break
+              if not ipa_asset:
+                  print(f"WARN: {repo_full} no ipa asset found in release")
+                  continue
+
+              app_entry = {
+                  "name": item["name"],
+                  "bundleIdentifier": item["bundleID"],
+                  "version": rel["tag_name"].lstrip("v"),
+                  "versionDate": rel["published_at"],
+                  "downloadURL": ipa_asset["browser_download_url"],
+                  "size": ipa_asset["size"],
+                  "developerName": repo_full.split("/")[0],
+                  "localizedDescription": (rel.get("body") or "")[:800],
+                  "iconURL": item["icon"],
+                  "screenshotURLs": [],
+                  "minOSVersion": "15.0"
+              }
+              source_base["apps"].append(app_entry)
+
+          # 写出 altsource.json
+          with open("altsource.json", "w", encoding="utf-8") as f:
+              json.dump(source_base, f, ensure_ascii=False, indent=2)
+          print("OK: altsource.json generated")
+          PYSCRIPT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit & Push altsource.json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add altsource.json
+          if git diff --cached --quiet; then
+            echo "No changes, skip commit"
+          else
+            git commit -m "Auto update altsource.json from latest releases"
+            git push
+          fi
