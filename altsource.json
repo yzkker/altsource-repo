@@ -32,12 +32,12 @@
     {
       "name": "WQManager",
       "bundleIdentifier": "mumu.pduola.WQManager",
-      "version": "0.4.2",
-      "versionDate": "2026-11-16T03:02:25Z",
-      "downloadURL": "https://github.com/hseons/WQManager/releases/download/v0.4.2/WQManager-0.4-build14-unsigned.ipa",
-      "size": 873753,
+      "version": "0.4.4",
+      "versionDate": "2026-11-16T13:47:46Z",
+      "downloadURL": "https://github.com/hseons/WQManager/releases/download/v0.4.4/WQManager-0.4-build16-unsigned.ipa",
+      "size": 891285,
       "developerName": "hseons",
-      "localizedDescription": "界面版本固定为 **0.4（构建 14）**。本次 GitHub 发布修订为 v0.4.2，供版本追踪和旧版检测更新使用。\n\n新增设置 →「访问能力」：\n\n- 显示设备与系统 build、当前签名的 App Group 证据、共享目录可用性与受保护数据状态。\n- 从已有 App 索引选择一个目标，分别检查 token、容器身份、目录打开／读取和文件读取样本。\n- 区分查询无结果、缺 token、token 消费失败、系统拒绝读取及容器身份变化，给出对应处理建议。\n- 支持停止检查与导出脱敏 JSON；报告去除 App 名、Bundle ID、路径、token、原始日志和文件内容。\n\n诊断每个目录最多检查 64 个直接条目，Documents／Library／tmp 各尝试读取一个普通文件的最多 1 字节；不写入目标 App，不启动全盘扫描。抽样通过不表示整个容器可读。共享 App Groups、扩展、系统容器及写入能力仍标记未验证。\n\n验证：20 组可移植测试通过；Debug 模拟器和 arm64 Release 构建通过，编译日志无警告；新增诊断代码无静态分析提示。iOS 26.0（23A343）模拟器中文浅色／英文深色、选择目标、检查结果和 JSON 分享流程通过，实际报告脱敏检查通过。\n\n静态分析保留两条原有提示：WQAccess 的 NSNumber 指针转 BOOL，以及空间透镜菜单可能加入空对象。真机签名／权限兼容性矩阵尚待安装验证。\n\n安装包为 **WQManager 0.4（14）未签名 IPA**，包含分享扩展；签名安装时请保留 App Group。\n\nSHA-256: `2072acd37e752b6740d295980c1ecbdd98f46dd135e46d1d5495d04c4e16a291`\n",
+      "localizedDescription": "显示版本 **0.4**，构建 **16**；内部发布修订 **0.4.4**。\n\n- 修复记录页状态徽标被压缩成一个字：徽标保留完整宽度，空间不足时先压缩副标题；副标题最多两行。\n- 应用页索引失败改为危险色并追加「下拉可重试」，失败不再看起来像普通说明。\n- 清理页没有可清理对象时收起选择计数与快捷筛选，空卡片可点按重新扫描。\n- 备份行时间改为今天/昨天/日期 + 时间，同一 App 的多份备份更容易区分。\n- 记录页与备份页的日期格式化器按语言缓存，去掉逐行创建开销。\n\n验证：22 个本地测试程序、5 条模拟器 UI 流程、Debug 模拟器与 Release arm64 构建均通过，编译警告 0 条。\n\n备份时间与徽标只影响展示，不改变备份、恢复与清理的判定逻辑。真机签名、容器访问和后台中断矩阵仍待验收。\n\n附件为 **未签名 IPA**，适合按项目说明保留 App Group 权限重新签名安装。\n",
       "iconURL": "https://avatars.githubusercontent.com/u/355256034?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
