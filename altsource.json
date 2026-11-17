@@ -56,19 +56,6 @@
       "minOSVersion": "15.0"
     },
     {
-      "name": "HGhubX",
-      "bundleIdentifier": "com.hghub.huangguo",
-      "version": "2.1.2",
-      "versionDate": "2026-11-15T16:56:37Z",
-      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.1.2/HGhubX_2.1.2_ios.ipa",
-      "size": 3852817,
-      "developerName": "zxsos",
-      "localizedDescription": "## HGhubX 2.1.2\n\n### 更新点\n\n- 标签详情同时展示短剧和吃瓜帖子，并分别分页；标签热度会明确标注，不再与内容数量混淆。\n- 横屏视频按当前播放源的媒体尺寸识别，尺寸确认前使用完整画面适配。\n\n### 修复点\n\n- 修复社区标签只查询短剧接口，导致官网存在帖子但应用显示空列表的问题。\n- 修复切集、切源时媒体尺寸报告竞态导致首页横屏视频被裁切或未显示横屏控制的问题。\n\n\n**Full Changelog**: https://github.com/zxsos/HGhubX/compare/v2.1.1...v2.1.2",
-      "iconURL": "https://avatars.githubusercontent.com/u/88264662?v=4",
-      "screenshotURLs": [],
-      "minOSVersion": "15.0"
-    },
-    {
       "name": "Force Duo",
       "bundleIdentifier": "com.34306.forceDuo",
       "version": "1.2",
@@ -84,12 +71,12 @@
     {
       "name": "Camlo",
       "bundleIdentifier": "com.kianuni.Camlo",
-      "version": "1.3.0",
-      "versionDate": "2026-11-16T02:20:27Z",
-      "downloadURL": "https://github.com/Kianuni/Camlo/releases/download/v1.3.0/Camlo_v1.3.0_Bilingual.ipa",
-      "size": 9528701,
+      "version": "1.3.1",
+      "versionDate": "2026-11-17T15:05:46Z",
+      "downloadURL": "https://github.com/Kianuni/Camlo/releases/download/v1.3.1/Camlo_v1.3.1_Bilingual.ipa",
+      "size": 9534904,
       "developerName": "Kianuni",
-      "localizedDescription": "## What's New in Camlo v1.3.0\n\n### 📱 Native iPhone Duo Dual-Screen Canvas (Inner + Outer)\n- Compiles unified WallpaperKit `<wallpapers>` `ParameterizedCA` packages embedding both the **Outer Cover** (`466×678` pt) and **Inner Unfolded Landscape** (`951×669` pt) canvases with `requiresLandscapeScaling = true`, scaled gyro parallax, and synchronized `Sleep / Locked / Unlock` transitions.\n- Auto-detects **iPhone Duo (`iPhone19,4`)** and switches Slide-to-Morph Studio & Video Studio to dual-screen mode by default (with manual toggle available on every iPhone).\n- Interactive **Outer / Inner live preview switcher**, landscape crop guides, dual Vision AI foreground clock-depth cutouts, and 120Hz `.ca` preview support in Vault X-Ray.\n\n### 🎨 10 Exclusive iPhone Duo Official Cloud Packs (60 Official",
+      "localizedDescription": "## What's New in Camlo v1.3.1 (Build 24)\n\n### 1. 10 Original 「次元 3D (Anime 3D)」 Cloud Wallpapers (`ParameterizedCA` + Apple Vision Clock Depth)\n- Official zero-bloat Cloud Gallery (`wallpapers/`) expanded from 60 to **70 packs** (**395+ total** across Official + Community channels), while keeping `Camlo_v1.3.1_Bilingual.ipa` ultra-slim at **~9.5 MB (`9.1 MiB`)**.\n- All 10 new 100%-original Anime packs (`18961`–`18970`) are natively compiled as single-screen **`ParameterizedCA` (`Marble` / `wantsDeviceMotion = true`)** bundles with **real hardware 120Hz 3D Gyroscope Parallax**, **Apple Vision foreground cutouts occluding the `09:41` clock**, **3-state (`Sleep → Locked → Unlock`) morphing**, and **hardware `CAEmitterLayer` / volumetric particles**:\n  1. `18961` · **墨线初醒 · 樱绘少女** (*Ink Sketch",
       "iconURL": "https://github.com/Kianuni.png",
       "screenshotURLs": [],
       "minOSVersion": "26.0"
@@ -284,6 +271,24 @@
       "tintColor": "#1E8FC7",
       "category": "utilities",
       "versions": [
+        {
+          "version": "0.9.18",
+          "buildVersion": "106",
+          "date": "2026-11-17",
+          "size": 2171189,
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.18/WQFiles.ipa",
+          "localizedDescription": "Custom inspectors (read-only JavaScript, install from a .zip), your own folders and files in the Cache Cleaner, and Japanese.",
+          "minOSVersion": "26.0"
+        },
+        {
+          "version": "0.9.17",
+          "buildVersion": "105",
+          "date": "2026-11-17",
+          "size": 2089006,
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.17/WQFiles.ipa",
+          "localizedDescription": "Fixes LiveContainer setups where every folder was refused, SQLite restore with -wal files, lossless SQLite and plist edits, and backups listed newest first.",
+          "minOSVersion": "26.0"
+        },
         {
           "version": "0.9.16",
           "buildVersion": "101",
