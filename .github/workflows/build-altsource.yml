@@ -37,6 +37,13 @@ jobs:
               {"repo": "hseons/WqManager",    "name": "WQManager", "bundleID": "mumu.pduola.WQManager",  "icon": "https://avatars.githubusercontent.com/u/355256034?v=4", "ipa_suffix": ".ipa"},
               {"repo": "mengangs/ipadn",      "name": "iPadn",     "bundleID": "app.local.iPadn",        "icon": "https://avatars.githubusercontent.com/u/138592982?v=4", "ipa_suffix": "-unsigned.ipa", "ipa_exclude": "lite"},
               {"repo": "zxsos/HGhub",         "name": "HGhubX",    "bundleID": "com.hghub.huangguo",     "icon": "https://avatars.githubusercontent.com/u/88264662?v=4",  "ipa_suffix": "_ios.ipa"},
+              {"repo": "34306/ForceDuoApp",   "name": "Force Duo", "bundleID": "com.34306.forceDuo",      "icon": "https://github.com/34306.png",  "ipa_suffix": ".ipa", "min_os": "27.0"},
+              {"repo": "Kianuni/Camlo",       "name": "Camlo",     "bundleID": "com.kianuni.Camlo",       "icon": "https://github.com/Kianuni.png", "ipa_suffix": ".ipa", "min_os": "26.0"},
+          ]
+
+          external_sources = [
+              "https://raw.githubusercontent.com/ios151/One-releases/main/altsource.json",
+              "https://raw.githubusercontent.com/kolbicz/WQFiles/main/source.json",
           ]
           # ========================================================
 
@@ -87,9 +94,33 @@ jobs:
                   "localizedDescription": (rel.get("body") or "")[:800],
                   "iconURL": item["icon"],
                   "screenshotURLs": [],
-                  "minOSVersion": "15.0"
+                  "minOSVersion": item.get("min_os", "15.0")
               }
               source_base["apps"].append(app_entry)
+
+          # Merge apps from projects that already maintain their own AltSource.
+          # Keep their native version history and metadata intact.
+          existing_bundle_ids = {
+              app.get("bundleIdentifier") for app in source_base["apps"]
+          }
+          for source_url in external_sources:
+              print(f"Fetching external source {source_url}")
+              resp = requests.get(source_url, headers=headers)
+              if resp.status_code != 200:
+                  print(f"WARN: external source fetch failed, code={resp.status_code}")
+                  continue
+              try:
+                  external_source = resp.json()
+              except ValueError as exc:
+                  print(f"WARN: external source JSON invalid: {exc}")
+                  continue
+
+              for app in external_source.get("apps", []):
+                  bundle_id = app.get("bundleIdentifier")
+                  if not bundle_id or bundle_id in existing_bundle_ids:
+                      continue
+                  source_base["apps"].append(app)
+                  existing_bundle_ids.add(bundle_id)
 
           # 写出 altsource.json
           with open("altsource.json", "w", encoding="utf-8") as f:
