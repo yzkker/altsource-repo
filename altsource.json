@@ -45,12 +45,12 @@
     {
       "name": "iPadn",
       "bundleIdentifier": "app.local.iPadn",
-      "version": "2.2.1",
-      "versionDate": "2026-11-18T10:04:29Z",
-      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.2.1/iPadn-2.2.1-unsigned.ipa",
-      "size": 50742804,
+      "version": "2.3.0",
+      "versionDate": "2026-11-20T12:50:39Z",
+      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.0/iPadn-2.3.0-unsigned.ipa",
+      "size": 46432455,
       "developerName": "mengangs",
-      "localizedDescription": "## iPadn 2.2.1\n\n本次版本重点修复开启「专业模式」时白屏与无法重进设置页、搜索结果偶现重复条目、「Wi‑Fi 传输」大包 30 秒断流等体验问题，并同步完成全仓导航栈、外部链接确认、磁盘空间清理与 `FairPlayCore` 流式解密边界安全加固。安装包未签名，请用自己的工具签名后安装。\n\n### 修复与稳定性提升\n\n- **修复专业模式白屏与子页面导航**：将底部标签切换统一绑定到语义化 `TabID`，修复开启或关闭「专业模式」时标签数组变化引发的白屏、设置页失联及退出专业模式时的导航监听循环；将「账号」与「应用包」导航栈升级为异构 `NavigationPath`，确保「本机应用 › 应用详情」、「历史版本来源」编辑页、「安装包信息」与「浏览安装包内容」深层进退稳定可靠。\n- **修复搜索偶现重复应用与下架状态串染**：对单区/多区商店搜索、本地索引与「更多结果」执行 `trackId` 及 `bundleID` 双重保序去重，合并最完整图标与体积元数据；防止本地旧缓存的已下架标记覆盖实时重新上架结果，并兼容 Apple Arcade 与 tvOS 实体核验。\n- **修复「Wi‑Fi 传输」满 30 秒断连**：将 30 秒连接超时严格限制在 HTTP 请求头读取阶段，进入安装包流式传输后立即解除计时，避免大体积 IPA 局域网下载中途断流。\n- **修复弹窗吞没、空间残留与边界崩溃**：修复「下载 › + › 通过链接下载」及备份/证书选择器收起动画期间吞没后续弹窗的问题；删除下载任务与启动时自动清理 `tmp/Share` 硬链接及残留临时导出文件，释放磁盘空间；修复灵动岛倒计时跨零崩溃、「应用包」页文件变动强制解包、备份导入覆盖商店地区竞态、无锁屏密码设备导入备份锁死、冷启动误触发自动解密、Mac `.pkg` 过期签名链接重试及根页面顶栏标题",
+      "localizedDescription": "## iPadn 2.3.0\r\n\r\n**目录 / Contents**：[简体中文](#-官方频道与反馈迁移公告) · [TestFlight 安全与免责](#-testflight-实验性说明安全提示与免责声明) · [English](#english) · [TestFlight Disclaimer](#testflight-experimental-notice-security--disclaimer)\r\n\r\n> **版本跨度说明**：自上一版 GitHub Release（**v2.2.1**）以来，项目在本地完成了 **20+ 次连续功能与稳定性迭代**，现统一合并发布为 **v2.3.0**。本次最大的变化是从零构建并集成了全新的 **TestFlight 模块（实验性）**，同时完善了应用内更新版本选择、本地化名称显示与官方 Telegram 社区体系。\r\n\r\n安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 📢 官方频道与反馈迁移公告\r\n\r\n- **官方 Telegram 频道**：👉 [**https://t.me/ipadn_official**](https://t.me/ipadn_official)（点击加入获取首发布与讨论）\r\n- **发布节奏说明**：iPadn 继续保持**免费开源**，GitHub 仍会同步更新与发布源码；自 **v2.3.0** 起，新版本安装包与源码归档会**优先在官方 Telegram 频道发布**（GitHub 发布略慢一步）。\r\n- **GitHub Issues 停止受理（历史 Issues 保留只读归档）**：由于个人维护精力有限，为提升排查与沟通效率，**GitHub Issues 已停止接受新反馈，原有历史 Issues 仅作只读归档保留**。所有新版本使用交流、TestFlight 问题",
       "iconURL": "https://avatars.githubusercontent.com/u/138592982?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
@@ -58,12 +58,12 @@
     {
       "name": "HGhubX",
       "bundleIdentifier": "com.hghub.huangguo",
-      "version": "2.2.2",
-      "versionDate": "2026-11-19T04:39:12Z",
-      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.2.2/HGhubX_2.2.2_ios.ipa",
-      "size": 3891126,
+      "version": "2.2.3",
+      "versionDate": "2026-11-20T05:33:55Z",
+      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.2.3/HGhubX_2.2.3_ios.ipa",
+      "size": 3895060,
       "developerName": "zxsos",
-      "localizedDescription": "## HGhubX 2.2.2\n\n2.2.0 之后的体验修复版本：收藏续播与新集提醒、底部进度预览、TV 启动密码，以及冷启动登录保持与移动端布局 / 键盘修复。\n\n### 新增\n\n- **收藏进度、续播与新集提醒**（#154）：收藏卡片显示上次观看进度；看完一集且有后续时从下一集开头继续；返回收藏页后台刷新集数并保留现有卡片，未看新集显示「新更 N 集」角标。\n- **TV 启动密码**（#152）：设置 → 启动密码可开启 / 修改 / 关闭四位 PIN 或立即锁定；支持遥控器数字键与屏幕键盘，连续输入不再被步骤切换清空，连续输错 5 次进入 15 秒冷却。\n\n### 改进\n\n- **底部进度预览**（#152）：横拖画面或拖动进度条统一在底部预览时间，松手才提交跳转，不再把进度条叠在画面中央。\n- **连续切集**（#156、#157）：下一集加载期间仍可继续划；同类集数提示只更新同一张卡片，不堆叠。\n- TV 解锁页移除重复副标题与底部操作说明，仅保留标题、输入提示与错误反馈。\n\n### 修复\n\n- **冷启动与账号恢复**（#156）：启动动画期间按返回只跳过动画；镜像验证暂时失败不再显示登出；账号同步 401 时同账号静默重登，身份或会话代次不符时保留原会话并提示手动处理。\n- **移动端布局与登录键盘**（#157、#163）：窄屏全宽、平板 / 桌面限宽居中；横竖屏底栏与弹层避开系统安全区；Android 标准版软键盘弹出后，密码框与「登录」按钮仍可滚到可见位置。\n\n### 验证\n\n- 集成校验全绿：前端标准版 + TV 版构建、Rust、浏览器 smoke、Playback core / extended（run 44454852498）。\n- 全平台打包成功：Windows、macOS、Linux、iOS 未签名 IPA、Android 标准版与 TV",
+      "localizedDescription": "# HGhubX v2.2.3\r\n\r\n本版重新安排手机播放控件，改善桌面子页的宽屏布局，并优化「我的」内容管理与吃瓜详情的稳定性。\r\n\r\n## **TV 端无任何改动**\r\n\r\n## 新增与优化\r\n\r\n1. **手机播放控件与全屏手势（#170）**：选集、静音、切集开关和全屏集中到屏幕底部；首页四个按钮使用更透明的底色，减少对画面的遮挡。横屏设置抽屉完整显示倍速选项；全屏支持上下滑切集并提示首尾边界，清屏时保留锁屏入口。\r\n2. **播放详情、标签与搜索（#170）**：「详情」和「选集」支持左右滑动切换，下拉关闭；点按标签查看同类，长按或右键可屏蔽。在栏目内打开的播放页可按当前内容类型搜索，首页底部的全局搜索不受影响。\r\n3. **收藏与观看历史管理（#168、#169）**：在「我的」中长按或右键卡片进入多选，可批量取消收藏或删除观看记录；列表接近底部时自动加载更多，网格列数保持不变。\r\n\r\n## 修复\r\n\r\n1. **吃瓜详情闪烁（#165）**：切换线路或代理时保留已展示的正文和滚动位置；阅读位置更新时复用未变的图片，短暂缓冲不再立即弹出加载动画。\r\n2. **桌面子页顶栏两侧断开（#171）**：「排行榜」「关注」等子页和页内搜索层的顶栏底色、分隔线铺满面板；标题、筛选项和正文仍按原宽度居中。\r\n3. **本人主页与批量操作**：本人主页隐藏「关注」入口；批量取消收藏期间切换账号、线路或代理时，旧批次停止发送后续项目，不显示旧批次的结果。\r\n\r\n## 安装与兼容提示\r\n\r\n- Windows 提供安装程序和便携包；macOS 提供通用架构 DMG；Linux 提供 amd64 DEB。\r\n- Android 标准版和 TV 版分别提供 APK，按设备架构选择 `arm64`、`armv7` 或 `x86_64`。覆盖升级请选相同版本类别，避免卸载造成应用数据丢失",
       "iconURL": "https://avatars.githubusercontent.com/u/88264662?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
@@ -84,12 +84,12 @@
     {
       "name": "Camlo",
       "bundleIdentifier": "com.kianuni.Camlo",
-      "version": "1.3.3",
-      "versionDate": "2026-11-19T00:45:24Z",
-      "downloadURL": "https://github.com/Kianuni/Camlo/releases/download/v1.3.3/Camlo_v1.3.3_Bilingual.ipa",
-      "size": 9541240,
+      "version": "1.3.4",
+      "versionDate": "2026-11-20T07:44:48Z",
+      "downloadURL": "https://github.com/Kianuni/Camlo/releases/download/v1.3.4/Camlo_v1.3.4_Bilingual.ipa",
+      "size": 9563095,
       "developerName": "Kianuni",
-      "localizedDescription": "## Camlo v1.3.3 (Build 26)\n\n### 修复 SideStore / AltStore 个人免费 Apple ID 安装失败 (#6)\n- **修复 `appIdName` 非法字符报错**：感谢 `@linszx` 的精准定位！此前主 `Info.plist` 顶层 `CFBundleDisplayName` 设为 `\"开幕 Camlo\"`，导致 SideStore / AltStore（底层 `SideSign` / `AltSign`）在向苹果开发者接口 `addAppId` 注册 App ID 时因包含中文及空格而触发 `An invalid value '开幕 Camlo' was provided for the parameter 'appIdName'` 安装失败。\n- **纯 ASCII 顶层名称 + 原生 `InfoPlist.strings` 本地化**：现已将主 `Info.plist` 顶层 `CFBundleDisplayName` 与 `apps.json` `name` 统一改为纯 ASCII 的 `\"Camlo\"`，同时启用 `LSHasLocalizedDisplayName` 并通过 `InfoPlist.xcstrings` 生成 `zh-Hans.lproj/InfoPlist.strings` 与 `en.lproj/InfoPlist.strings`——SideStore / AltStore 个人免费签可顺利完成 App ID 注册并保留 `App Group` 权限，简体中文桌面图标仍优雅显示为 **「开幕 Camlo」**。\n- 完整继承 `v1.3.2` 对 iPhone Duo 折叠屏 `retinaMultiplier` 与内屏偏移的修复、10 套原创「次元 3D」二次元交互云端包与金库旧包",
+      "localizedDescription": "## Camlo v1.3.4 (Build 27)\n\n### 彻底修复 iOS 真机锁屏景深破框不触发 (#7, #3)\n- **定位并满足 `WallpaperKit` 原生景深白名单校验**：通过逆向 iOS `WallpaperKit.framework` (`supportsDepthEffect`)，确认系统会在切换真机锁屏前强制检查路径中是否包含 `Clownfish` 标记（`ParameterizedCA` 检查 `wallpaper.ca` 所在 `.wallpaper` 路径；`LayeredAnimation` 检查 `floatingAnimationFileNameKey` 指向的 `Floating.ca` 路径）；若不满足，系统即记录 `Depth not supported, collapsing floating view into foreground view` 并将前景层降级压到系统时间之后（导致在 Camlo App 内能遮挡 `09:41`，回到系统真机锁屏却总是时间压人物）。\n- **双引擎与历史壁纸自动原地自愈**：现已全面升级 3D `ParameterizedCA`（`7920.Camlo_Clownfish_3D-...wallpaper`）与滑动变身/实况 `LayeredAnimation`（`7400.Clownfish_WWDC_2022-...wallpaper` / `7400.WWDC_2022_Clownfish_Floating-...ca`）；**已保存在金库或外部导入的旧版 `.tendies` 壁纸**在升级至 `v1.3.4` 后会自动原地自愈迁移，无需重新创作。\n\n### 重塑 3D 陀螺仪 (`ParameterizedCA`) 立体视差与消重影 (#3)\n- **消除主体背后「双重轮廓重",
       "iconURL": "https://github.com/Kianuni.png",
       "screenshotURLs": [],
       "minOSVersion": "26.0"
@@ -284,6 +284,15 @@
       "tintColor": "#1E8FC7",
       "category": "utilities",
       "versions": [
+        {
+          "version": "0.9.19",
+          "buildVersion": "113",
+          "date": "2026-11-20",
+          "size": 2182170,
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.19/WQFiles.ipa",
+          "localizedDescription": "Optional App Store icons for other apps (Settings → App Store Icons), fixes apps with one-word bundle ids (like Pinterest) and the empty gap above the Apps list on iOS 27, and keeps the Backups tab working on iOS 27 beta 5.",
+          "minOSVersion": "26.0"
+        },
         {
           "version": "0.9.18",
           "buildVersion": "106",
