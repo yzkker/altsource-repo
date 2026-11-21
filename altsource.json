@@ -45,12 +45,12 @@
     {
       "name": "iPadn",
       "bundleIdentifier": "app.local.iPadn",
-      "version": "2.3.0",
-      "versionDate": "2026-11-20T12:50:39Z",
-      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.0/iPadn-2.3.0-unsigned.ipa",
-      "size": 46432455,
+      "version": "2.3.1",
+      "versionDate": "2026-11-21T05:47:39Z",
+      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.1/iPadn-2.3.1-unsigned.ipa",
+      "size": 46562021,
       "developerName": "mengangs",
-      "localizedDescription": "## iPadn 2.3.0\r\n\r\n**目录 / Contents**：[简体中文](#-官方频道与反馈迁移公告) · [TestFlight 安全与免责](#-testflight-实验性说明安全提示与免责声明) · [English](#english) · [TestFlight Disclaimer](#testflight-experimental-notice-security--disclaimer)\r\n\r\n> **版本跨度说明**：自上一版 GitHub Release（**v2.2.1**）以来，项目在本地完成了 **20+ 次连续功能与稳定性迭代**，现统一合并发布为 **v2.3.0**。本次最大的变化是从零构建并集成了全新的 **TestFlight 模块（实验性）**，同时完善了应用内更新版本选择、本地化名称显示与官方 Telegram 社区体系。\r\n\r\n安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 📢 官方频道与反馈迁移公告\r\n\r\n- **官方 Telegram 频道**：👉 [**https://t.me/ipadn_official**](https://t.me/ipadn_official)（点击加入获取首发布与讨论）\r\n- **发布节奏说明**：iPadn 继续保持**免费开源**，GitHub 仍会同步更新与发布源码；自 **v2.3.0** 起，新版本安装包与源码归档会**优先在官方 Telegram 频道发布**（GitHub 发布略慢一步）。\r\n- **GitHub Issues 停止受理（历史 Issues 保留只读归档）**：由于个人维护精力有限，为提升排查与沟通效率，**GitHub Issues 已停止接受新反馈，原有历史 Issues 仅作只读归档保留**。所有新版本使用交流、TestFlight 问题",
+      "localizedDescription": "## iPadn 2.3.1\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.0** 的首个快速修复与性能优化版：全面恢复 **iOS / iPadOS 16** 兼容运行，彻底解决快速滑动已缓存及未缓存「历史版本」长列表时的掉帧卡顿，新增跨区下载失败（`2059` / `1010`）后的智能原因提示与一键切换账号重试，并补齐 Xcode / TestFlight CI 编译与初始化稳定性。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **恢复 iOS / iPadOS 16 完整兼容（感谢 [@tageniu](https://github.com/tageniu) 在 PR #108 的贡献）**\r\n  - 修复 `v2.3.0` 构建时将部署目标升至 iOS 17 导致 iOS 16 设备冷启动即因 `dyld` 缺失 `Symbols.framework` 闪退的问题：统一把 SwiftPM、`xtool` 与 Xcode 的最低部署目标恢复为 **iOS 16.0**，并对 `Symbols`、`Translation`、`ActivityKit` 保持弱链接（`LC_LOAD_WEAK_DYLIB`）与完整运行时可用性防护。\r\n  - 修复 iOS 16 设备本地生成安装 PKCS#12 证书时 `SecItemImport` 因默认 AES 算法不兼容导致的失败：iOS 16 上自动回退为兼容",
       "iconURL": "https://avatars.githubusercontent.com/u/138592982?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
@@ -63,7 +63,7 @@
       "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.2.5/HGhubX_2.2.5_ios.ipa",
       "size": 3927965,
       "developerName": "zxsos",
-      "localizedDescription": "# HGhubX v2.2.5\n\n聚焦多语言支持（简体中文、繁体中文、英语）、播放器微光效果与多端播放交互修复；覆盖 Windows、macOS、Linux、Android 与 iOS 标准版。\n\n## 新增与优化\n1. **简体中文、繁体中文与英语界面切换（#190）**：默认使用简体中文，可在「设置 → 外观 → 语言」中一键切换简体中文、繁體中文与 English，切换后立即生效并跨重启持久化；繁体中文与英语词典按需异步加载，首屏默认体积接近零增长。\n2. **播放器微光效果（#192）**：低分辨率实时采样当前播放画面颜色并柔和扩散至视频黑边区域；可在「设置 → 播放 → 微光效果」中随时开关（默认开启，关闭后不挂载采样层以节省电量）。\n3. **精简移动端长按倍速交互（#193）**：移除拖动至顶部胶囊锁定倍速的繁琐交互，长按右侧仅作临时加速、长按左侧临时 0.5x 减速、松手即恢复原倍速；持久倍速统一在全屏倍速按钮或「更多 → 播放设置」中调整。\n\n## 修复\n1. **桌面端开启「上下划切集」滚轮切集失效（#195）**：桌面端开启「上下划切集」后，鼠标滚轮或触控板纵向滑动原本直接触发列表原生滚动跳到下一部剧；现拦截播放区纵向滚轮并在当前剧内顺滑切集、弹出集数提示，底部控制栏「下一集 ↓ / 下一部 ↓」按钮同步遵循该开关。\n2. **清屏锁定后锁图标常驻遮挡画面（#194）**：移动端清屏模式点击锁定后立即隐藏右侧锁图标，锁定期间仅在点按屏幕触发「轻触即可解锁」提示时同步显示解锁按钮 2.2 秒，避免图标常驻干扰观看。\n3. **横屏全屏切集时集数提示重复闪现（#191）**：横屏全屏切集时暂存集数提示，待下一集视频尺寸解析完成并真正开播后再于横屏旋转舞台弹出一次，消除切换瞬间在竖屏和横屏位置各弹一次的问题。\n\n## 安装与兼容提示\n- Windows 提供",
+      "localizedDescription": "# HGhubX v2.2.5\r\n\r\n聚焦多语言支持（简体中文、繁体中文、英语）、播放器微光效果与多端播放交互修复；覆盖 Windows、macOS、Linux、Android 与 iOS 标准版。\r\n@makisekurisu-jp @zxsos\r\n## 新增与优化\r\n1. **简体中文、繁体中文与英语界面切换（#190）**：默认使用简体中文，可在「设置 → 外观 → 语言」中一键切换简体中文、繁體中文与 English，切换后立即生效并跨重启持久化；繁体中文与英语词典按需异步加载，首屏默认体积接近零增长。\r\n2. **播放器微光效果（#192）**：低分辨率实时采样当前播放画面颜色并柔和扩散至视频黑边区域；可在「设置 → 播放 → 微光效果」中随时开关（默认开启，关闭后不挂载采样层以节省电量）。\r\n3. **精简移动端长按倍速交互（#193）**：移除拖动至顶部胶囊锁定倍速的繁琐交互，长按右侧仅作临时加速、长按左侧临时 0.5x 减速、松手即恢复原倍速；持久倍速统一在全屏倍速按钮或「更多 → 播放设置」中调整。\r\n\r\n## 修复\r\n1. **桌面端开启「上下划切集」滚轮切集失效（#195）**：桌面端开启「上下划切集」后，鼠标滚轮或触控板纵向滑动原本直接触发列表原生滚动跳到下一部剧；现拦截播放区纵向滚轮并在当前剧内顺滑切集、弹出集数提示，底部控制栏「下一集 ↓ / 下一部 ↓」按钮同步遵循该开关。\r\n2. **清屏锁定后锁图标常驻遮挡画面（#194）**：移动端清屏模式点击锁定后立即隐藏右侧锁图标，锁定期间仅在点按屏幕触发「轻触即可解锁」提示时同步显示解锁按钮 2.2 秒，避免图标常驻干扰观看。\r\n3. **横屏全屏切集时集数提示重复闪现（#191）**：横屏全屏切集时暂存集数提示，待下一集视频尺寸解析完成并真正开播后再于横屏旋转舞台弹出一次，消除切换瞬间在竖屏和横屏",
       "iconURL": "https://avatars.githubusercontent.com/u/88264662?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
