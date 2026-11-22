@@ -45,12 +45,12 @@
     {
       "name": "iPadn",
       "bundleIdentifier": "app.local.iPadn",
-      "version": "2.3.3",
-      "versionDate": "2026-11-21T14:14:24Z",
-      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.3/iPadn-2.3.3-unsigned.ipa",
-      "size": 49810722,
+      "version": "2.3.4",
+      "versionDate": "2026-11-22T05:56:54Z",
+      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.4/iPadn-2.3.4-unsigned.ipa",
+      "size": 49929497,
       "developerName": "mengangs",
-      "localizedDescription": "## iPadn 2.3.3\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.3** 全面加固与体验升级版：重点修复下载/领许可时偶发「Apple 暂时无法完成该操作」的协议盲区（补齐 `1008` 会话过期刷新、`-128` 地区自动纠偏、新版条款提示与 HTTP 200 诊断日志）；升级「下载」页多选与统一撤销删除，新增安装包构建 SDK / Xcode 版本速查，修复「应用包」左滑变灰遮罩，并完成一轮覆盖安全脱敏、滚动性能、深浅色对比度与 11 语言本地化的全面审计优化。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **修复 Apple 下载/获取报错「暂时无法完成该操作」与诊断盲区**\r\n  - 补齐 `1008`（设备验证/会话过期）在下载、历史版本票据、领免费许可及 Mac 包路径中的自动刷新与重新登录处理；补充密码已更改（`Your password has changed.`）与账号停用（`Your account is disabled.`）的明确引导。\r\n  - 新增 `-128`（`MZCommerce.CountryMismatch`）自动纠偏：安全校验 Apple 返回的 `resetAndRedirect?dsf=` 商店代码，自动更新账号真实地区并重试，避免 `+86` 手机号或转区账号卡在地区错配。\r\n  - 新增 `buyProductFailure` 新版 App Sto",
+      "localizedDescription": "## iPadn 2.3.4\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.4** 体验打磨与一致性升级版：全面打通 **TestFlight** 与常规下载体验（后台下载保活、灵动岛百分比实时同步、取消多余分组、全应用统一极简单色 TestFlight 图标，并同步接入「已解密」「Wi‑Fi 传输」与「存储空间」）；重构下载/TestFlight 暂停、继续与全状态切换弹性形变动效；优化本机配对引导与全应用居中确认弹窗，并修复双重认证与系统兼容细节。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **TestFlight 后台下载与灵动岛实时同步**\r\n  - 完善 TestFlight 后台下载保活、随时暂停/继续与速度/ETA 展示，进度环与常规 App Store 下载体验保持一致。\r\n  - 修复灵动岛与锁屏实时活动在退回后台后进度百分比停滞的问题（启用高频更新许可与后台保活同步，完成或暂停时自动收起）。\r\n- **全应用 TestFlight 统一列表与极简单色图标**\r\n  - 「下载」页与「应用包 › 原始 IPA」取消单独的 TestFlight 分组，与普通 IPA 合并排序展示；统一在版本信息行前置极简单色 TestFlight 图标，彻底移除旧蓝色 `TF` 胶囊与会话级「已安装」残留，安装行为与普通 IPA 完全一致。\r\n  - 补全所有关联页面的统一展示与数据联动：**「应用包 ",
       "iconURL": "https://avatars.githubusercontent.com/u/138592982?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
@@ -284,6 +284,15 @@
       "tintColor": "#1E8FC7",
       "category": "utilities",
       "versions": [
+        {
+          "version": "0.9.20",
+          "buildVersion": "114",
+          "date": "2026-11-21",
+          "size": 2199929,
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.20/WQFiles.ipa",
+          "localizedDescription": "Imports Apps Manager backups (.adbk), says when another app is using a file instead of showing errno 35, and keeps an app's database and its -wal/-shm files together.",
+          "minOSVersion": "26.0"
+        },
         {
           "version": "0.9.19",
           "buildVersion": "113",
