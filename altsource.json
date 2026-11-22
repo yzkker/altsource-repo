@@ -50,7 +50,7 @@
       "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.4/iPadn-2.3.4-unsigned.ipa",
       "size": 49929497,
       "developerName": "mengangs",
-      "localizedDescription": "## iPadn 2.3.4\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.4** 体验打磨与一致性升级版：全面打通 **TestFlight** 与常规下载体验（后台下载保活、灵动岛百分比实时同步、取消多余分组、全应用统一极简单色 TestFlight 图标，并同步接入「已解密」「Wi‑Fi 传输」与「存储空间」）；重构下载/TestFlight 暂停、继续与全状态切换弹性形变动效；优化本机配对引导与全应用居中确认弹窗，并修复双重认证与系统兼容细节。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **TestFlight 后台下载与灵动岛实时同步**\r\n  - 完善 TestFlight 后台下载保活、随时暂停/继续与速度/ETA 展示，进度环与常规 App Store 下载体验保持一致。\r\n  - 修复灵动岛与锁屏实时活动在退回后台后进度百分比停滞的问题（启用高频更新许可与后台保活同步，完成或暂停时自动收起）。\r\n- **全应用 TestFlight 统一列表与极简单色图标**\r\n  - 「下载」页与「应用包 › 原始 IPA」取消单独的 TestFlight 分组，与普通 IPA 合并排序展示；统一在版本信息行前置极简单色 TestFlight 图标，彻底移除旧蓝色 `TF` 胶囊与会话级「已安装」残留，安装行为与普通 IPA 完全一致。\r\n  - 补全所有关联页面的统一展示与数据联动：**「应用包 ",
+      "localizedDescription": "## iPadn 2.3.4\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.4** 体验与稳定性全面升级版：全面打通 **TestFlight 实时同步下载、后台断点续传、统一自动安装与灵动岛进度同步**；取消下载页与「应用包」冗余分组并在全应用（含「已解密」「Wi‑Fi 传输」「存储空间」）统一极简单色 TestFlight 图标；重构下载与 TestFlight 暂停/继续及全状态切换弹性形变动效；根治多账号切换反复触发验证码、多手机号 2FA 与 0 应用账号卡顿；统一「应用包」5 秒侧滑撤销与全应用原生居中弹窗、优化本机配对引导，并补齐 App Store 账单/条款报错引导及原生安装 iOS 17.4+ 与局域网防护。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **TestFlight 同步下载、后台续传、自动安装与灵动岛同步**\r\n  - TestFlight 任务在元数据就绪并实际开始下载后，实时同步显示在「下载」页顶部（准备阶段不提前占位）并联动底部「下载」标签角标，下载过程进度环与常规 App Store 下载体验保持一致。\r\n  - 接入后台传输与前台回退保活，支持真暂停/断点续传（`resumeData` 保存、续传不消耗重试次数、CDN 签名过期自动刷新链接）、实时网速/ETA 估算，并联动「全部暂停 / 全部继续」。\r\n  - TestFlight 同步接入「下载完成后自动安装",
       "iconURL": "https://avatars.githubusercontent.com/u/138592982?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
@@ -58,12 +58,12 @@
     {
       "name": "HGhubX",
       "bundleIdentifier": "com.hghub.huangguo",
-      "version": "2.2.6",
-      "versionDate": "2026-11-21T17:01:54Z",
-      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.2.6/HGhubX_2.2.6_ios.ipa",
-      "size": 3990783,
+      "version": "2.2.7",
+      "versionDate": "2026-11-22T12:13:11Z",
+      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.2.7/HGhubX_2.2.7_ios.ipa",
+      "size": 3992968,
       "developerName": "zxsos",
-      "localizedDescription": "# HGhubX v2.2.6\n\n聚焦分类频道与官网排序同步、全站分页上滑自动加载、海报角标、多页左右滑动切栏与 FakeIP 代理连接修复；覆盖 Windows、macOS、Linux、Android 与 iOS 标准版。\n\n## 新增与优化\n1. **分类与原创频道与官网排序同步（#202、#211）**：短剧、漫剧频道的「最近更新」「当前热播」「精选推荐」以及「原创」频道的「全部原创」「原创漫剧」「原创短剧」优先解析官网服务端渲染频道页，与网站更新排序、总页数、标签及统计保持一致，解析异常时自动回退原有 JSON 接口。\n2. **海报左上角新增「原创」「热播」「新片」角标（#202、#211）**：瀑布流与横向预览卡片海报左上角按「原创」「热播」「新片」（72 小时窗口）顺序显示高对比度角标，避免与右上角评分重叠；集数状态移至海报底部遮罩左侧与播放量同排展示，「我的」页继续保留「新更 N 集」角标。\n3. **分页列表统一改为上滑自动加载（#202、#211）**：频道页、吃瓜列表、专题详情、标签详情、关注/创作者作品与全局/栏目搜索均在接近底部时自动续载下一页，不再常驻手动「加载更多」按钮；开启标签屏蔽时同样保持自动加载，仅当连续 2 页过滤后均无可见条目时熔断暂停并展示手动兜底按钮。\n4. **多页面支持左右滑动切换标签栏（#208、#209）**：排行榜支持左右滑动切换热播/推荐/潜力榜；「我的」页支持左右滑动切换收藏/历史；分类频道页支持左右滑动切换筛选 tab。\n5. **「我的」页批量管理新增「全选」（#205）**：收藏与观看历史进入多选模式后支持一键「全选」，并移除历史页底部多余的独立清空按钮，统一收口到批量管理操作栏。\n\n## 修复\n1. **iOS / 桌面 TUN FakeIP 代理导致请求全部被拒（#199）**：开启 Shadowrocke",
+      "localizedDescription": "# HGhubX v2.2.7\n\n围绕搜索与排行榜、标签排序、吃瓜正文站内视频直达及播放器全屏交互稳定性打磨体验，并新增 Android 13+ Material You 动态主题图标适配；覆盖 Windows、macOS、Linux、Android 与 iOS 标准版。\n\n## 新增与优化\n1. **Android 13+ Material You 动态主题图标（#216）**：补充 `108dp × 108dp` 纯单色自适应矢量图层（`ic_launcher_monochrome.xml`）及圆角/默认自适应配置，支持 Android 13+ 启动器按壁纸动态着色，同时保持 Android 8–12 与既有彩色桌面图标外观不变。\n2. **搜索热搜榜官网同步与单行紧凑布局（#221、#225）**：搜索页热搜请求改为直连干净路径 `{base}/search/`（移除防缓存查询串），与官网 CDN 边缘快照条目、名次及播放量保持同源同序；卡片布局调整为「序号 + 单行省略片名 + 右对齐播放量 + 右箭头」的官网紧凑单行样式。\n3. **视频页操作区与全屏交互打磨（#217、#218、#219、#220）**：统一视频页顶部「搜短剧」与清晰度徽标高度及基线对齐；右侧评论入口改为与点赞/收藏一致的空心线条图标；点赞、收藏、关注共用 `playback-hint` 提示单槽位避免连续点击堆叠；全屏锁屏图标改为随闲置控件同步自动隐藏。\n\n## 修复\n1. **排行榜「热播榜」与官网实时热度不同步（#221、#226）**：修正匿名 JSON `/api/ranks/hot` 返回历史累计总榜导致的内容偏差，热播榜改为优先解析官网 `/ranks/hot/` 服务端渲染页面中的实时热度 TOP20（解析失败自动回退 `/api/ranks/hot`），「推荐榜」「潜力榜」与既",
       "iconURL": "https://avatars.githubusercontent.com/u/88264662?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
