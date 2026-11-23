@@ -45,12 +45,12 @@
     {
       "name": "iPadn",
       "bundleIdentifier": "app.local.iPadn",
-      "version": "2.3.4",
-      "versionDate": "2026-11-22T05:56:54Z",
-      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.4/iPadn-2.3.4-unsigned.ipa",
-      "size": 49929497,
+      "version": "2.3.5",
+      "versionDate": "2026-11-23T15:22:43Z",
+      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.5/iPadn-2.3.5-unsigned.ipa",
+      "size": 50052300,
       "developerName": "mengangs",
-      "localizedDescription": "## iPadn 2.3.4\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.4** 体验与稳定性全面升级版：全面打通 **TestFlight 实时同步下载、后台断点续传、统一自动安装与灵动岛进度同步**；取消下载页与「应用包」冗余分组并在全应用（含「已解密」「Wi‑Fi 传输」「存储空间」）统一极简单色 TestFlight 图标；重构下载与 TestFlight 暂停/继续及全状态切换弹性形变动效；根治多账号切换反复触发验证码、多手机号 2FA 与 0 应用账号卡顿；统一「应用包」5 秒侧滑撤销与全应用原生居中弹窗、优化本机配对引导，并补齐 App Store 账单/条款报错引导及原生安装 iOS 17.4+ 与局域网防护。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **TestFlight 同步下载、后台续传、自动安装与灵动岛同步**\r\n  - TestFlight 任务在元数据就绪并实际开始下载后，实时同步显示在「下载」页顶部（准备阶段不提前占位）并联动底部「下载」标签角标，下载过程进度环与常规 App Store 下载体验保持一致。\r\n  - 接入后台传输与前台回退保活，支持真暂停/断点续传（`resumeData` 保存、续传不消耗重试次数、CDN 签名过期自动刷新链接）、实时网速/ETA 估算，并联动「全部暂停 / 全部继续」。\r\n  - TestFlight 同步接入「下载完成后自动安装",
+      "localizedDescription": "## iPadn 2.3.5\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.5** 稳定性修复与体验升级版：根治 **iOS 16.0–16.2 强链接符号闪退**、**iOS 27.2 beta 2 历史版本加载闪退** 与 **iPadOS 全屏/专业模式导航栏异常**；**TestFlight 现支持切换下载 Apple TV 等多平台测试包**并统一展示单色客户端标识，同时修复大型/多变体游戏误报「产物校验失败，已清理」及详情页顶部虚化异常；在「设置 › 外观与图标」开放**自定义全部 177 个 Apple 商店地区**（支持搜索筛选、勾选、拖拽排序与国旗展示）；并修复 FairPlay 高熵插件误拒、登录 `5020`/2FA 提示、未购免费应用首次获取旧版报错与「应用包」批量导入打断问题。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **修复 iOS 16/27 闪退与 iPadOS 专业模式导航异常**\r\n  - 移除强链接 iOS 17+/18+ 的 `UnevenRoundedRectangle` 与全部 `.onGeometryChange` 调用，改用向后兼容路径与几何读取实现，根治 iOS 16.0 / 16.0.2 / 16.2 打开界面或卡片时因动态符号缺失导致的闪退。\r\n  - 修复 iOS 27.2 beta 2 在应用详情页加载历史版本时偶发崩溃的问题（修正版本行布局优",
       "iconURL": "https://avatars.githubusercontent.com/u/138592982?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
