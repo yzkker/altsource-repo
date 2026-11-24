@@ -17,19 +17,6 @@
       "minOSVersion": "15.0"
     },
     {
-      "name": "3106",
-      "bundleIdentifier": "com.qingtang.3106",
-      "version": "3.2.8",
-      "versionDate": "2026-11-19T17:56:05Z",
-      "downloadURL": "https://github.com/QuinnTang74/3106/releases/download/v3.2.8/3106-3.2.8-unsigned.ipa",
-      "size": 5955049,
-      "developerName": "QuinnTang74",
-      "localizedDescription": "# 3106 3.2.8 正式版\n\n- 版本：**3.2.8**\n- 构建：**33**\n- 日期：2026-11-20\n- 产物：`3106-3.2.8-unsigned.ipa`\n- SHA256：`18d652a41ebacd8569a27a4c1b5b5686df656301188202dd8848ea9edaca7918`\n\n本次版本集中修复“数据明明改了但 3106 不显示/不生效”这一类问题，并把 MobileGestalt 的能力位读取从字典扩展到二进制槽位。\n\n## 重点变化\n\n### 1. 沙箱访问缓存自愈\n\n`worse_query` 依赖 App Group 的 `Library/Caches` 交换。此前如果该目录被上一次中断的交换、旧版本或同组其它程序留下的软链占住，恢复逻辑会一直拒绝，交换无法开始，所有授权返回 `-4`（日志 `tried=[]`）。表现为文件浏览器全部“未识别容器”、清理器只统计到 3106 自身。\n\n现在：\n\n- 恢复失败会先做一次“挪开障碍物”的修复：删除 `Caches` 软链、把非目录/无法恢复的 `.wq-caches-preserved` 改名到 `.wq-caches-reset-<id>`、重建普通 `Caches`；**不删除任何用户数据**。\n- 授权失败码改为 `-5`，Swift 层按 60 秒节流自动修复并重试一次。\n- 设置 → 沙箱诊断新增 **“重置访问缓存”**，幂等，修复后立即重跑探测。\n\n### 2. 地区读取与生效判定\n\n- `RegionInfoFromSysconfig`（`yK+xavym…`）是系统读取的键；`RegionInfo`（`zHeENZu…`）在 iOS 27 上是**非缓存键**，旧工具注入后可能保留旧值。现在 sysconfig 优先。\n- 地区页同时显示两个键",
-      "iconURL": "https://avatars.githubusercontent.com/u/96588526?v=4",
-      "screenshotURLs": [],
-      "minOSVersion": "15.0"
-    },
-    {
       "name": "WQManager",
       "bundleIdentifier": "mumu.pduola.WQManager",
       "version": "0.5.0",
@@ -58,12 +45,12 @@
     {
       "name": "HGhubX",
       "bundleIdentifier": "com.hghub.huangguo",
-      "version": "2.2.9",
-      "versionDate": "2026-11-24T00:07:31Z",
-      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.2.9/HGhubX_2.2.9_ios.ipa",
-      "size": 4009527,
+      "version": "2.2.10",
+      "versionDate": "2026-11-24T10:16:05Z",
+      "downloadURL": "https://github.com/zxsos/HGhubX/releases/download/v2.2.10/HGhubX_2.2.10_ios.ipa",
+      "size": 4048150,
       "developerName": "zxsos",
-      "localizedDescription": "# HGhubX v2.2.9\n\n重点修复 Android WebView 播放页合成器闪烁问题，并升级「我的收藏」单图标追剧状态筛选与频道/标签结果页指标排序；覆盖 Windows、macOS、Linux、Android 与 iOS 标准版。\n\n## 新增与优化\n1. **「我的收藏 → 短剧」单图标追剧状态筛选与底栏快捷复位（#243）**：收藏短剧右上角合并为单图标筛选胶囊，点击展开「追剧状态」菜单并展示「在追剧」「连载中」「已完结」及各自数量（三类允许重叠，按更新时间倒序稳定排列）；卡片统一只保留单个左上角角标随分类切换（「未看 N 集」/「更新至 N 集」/「全 N 集」）；移动端再次点击底栏激活中的「我的」可一键复位回「我的收藏 / 短剧 / 全部收藏」并回到顶部。\n2. **分类频道与标签结果页指标排序（#244）**：原创、AI 短剧、AI 漫剧频道及标签结果页短剧区块右侧新增排序入口，支持按「点赞数」「收藏数」「播放数」「评分」降序/升序切换（再次点击当前指标反转方向，切 Tab 保留当前指标），通过 `jsonOnly` 抓取完整结果并按 20 条渐进渲染，不影响标签页吃瓜帖。\n\n## 修复\n1. **Android 播放页画面闪烁与瓦片异常（#240、#242）**：针对 Android WebView（Skia/Viz）在硬件 `<video>` 上方叠加高半径模糊与持久动画层引发的闪烁问题，在 `.plat-android` 播放页关闭压在视频上的 `backdrop-filter`（改用等价半透明深色底），移除被遮盖的 `blur-3xl` 与未缩放时的 3D `translate3d`，仅在活跃条目渲染 `FeedItemChrome` 且仅缩放态挂载还原胶囊；Android 端「微光效果」改用 `8×5` 画布按 `250ms` 采样配合 G",
+      "localizedDescription": "# HGhubX v2.2.10\n\n紧急适配上游全新 `dx150-edge-v1` 四作用域加密网关修复全接口 503，并合入标签置顶、右半屏长按倍速胶囊、搜索页热门标签官网同步、网络切换静默恢复、完结剧集「全 N 集」与窄屏布局修复；覆盖 Windows、macOS、Linux、Android 与 iOS 标准版。\n\n## 新增与优化\n1. **标签页长按置顶与标签结果页标题栏置顶（#247、#252）**：在「分类 → 标签」顶部新增「置顶标签」板块，支持长按标签 600ms 切换置顶/取消（最多 24 个，横向拖动超过 10px 取消防误触）；进入任意标签结果页后，标题栏右侧新增图钉按钮一键置顶（已置顶朝下扎稳并高亮），状态保存在内容偏好 `pinnedTags` 并跨重启保留。\n2. **移动端右半屏长按倍速与顶部只读胶囊提示（#247、#251）**：长按手势取消对角线斜切与居中死区，改为直觉的左右半屏切分（右半屏 `2×` 倍速、左半屏 `0.5×` 慢放，起手延迟缩至 `260ms`，横滑 `68px` 换挡，松手即恢复不锁定）；长按激活期间在安全区顶部居中显示无 `backdrop-filter` 的只读倍速胶囊与挡位点，清屏模式下也有清晰视觉反馈。\n3. **搜索结果 / 分类 / 标签卡片完结剧集显示「全 N 集」（#248）**：已完结剧目在海报底部集数角标统一显示「全 N 集」（优先取 `total_episodes`，缺失时回退 `episode_count`），未完结剧目保持原有更新集数文案。\n\n## 修复\n1. **适配上游 `dx150-edge-v1` 四作用域加密网关，修复接口全 503（#255、#256）**：上游于 2026-11-24 下线旧统一入口 `/api/edge/request`（返回 `HTTP 503 {\"msg\"",
       "iconURL": "https://avatars.githubusercontent.com/u/88264662?v=4",
       "screenshotURLs": [],
       "minOSVersion": "15.0"
